@@ -33,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #d1d5db; }
+        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #d1d5db; zoom: 1.25; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1f2937; }
         ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
@@ -46,6 +46,8 @@
         .timeline-dot { position: absolute; left: -0.5rem; top: 0.25rem; height: 1rem; width: 1rem; background-color: #4f46e5; border-radius: 9999px; border: 3px solid #111827; }
         .btn-primary { background-color: #4f46e5; transition: background-color 0.3s ease; }
         .btn-primary:hover { background-color: #6366f1; }
+        .btn-secondary { background-color: transparent; border: 2px solid #6366f1; color: #d1d5db; transition: background-color 0.3s ease, color 0.3s ease; }
+        .btn-secondary:hover { background-color: #6366f1; color: #ffffff; }
         .section-title { text-shadow: 0 0 15px rgba(79, 70, 229, 0.5); }
         .nav-link { position: relative; transition: color 0.3s; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #4f46e5; transition: width 0.3s; }
@@ -94,7 +96,12 @@
                 <p class="text-gray-300 max-w-xl mx-auto mb-10">
                     Crafting elegant, efficient, and user-centric digital experiences. I turn complex problems into beautiful, intuitive software solutions.
                 </p>
-                <a href="#projects" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg inline-block">View My Work</a>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#projects" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg inline-block w-full sm:w-auto">View My Work</a>
+                    <a href="http://34.41.124.34:5000/" target="_blank" rel="noopener noreferrer" class="btn-secondary font-bold py-3 px-8 rounded-full text-lg inline-block w-full sm:w-auto">
+                        <i class="fas fa-server mr-2"></i>Link to Private Server
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -305,4 +312,5 @@
     </script>
 </body>
 </html>
+
 
