@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeChat = document.getElementById('close-chat');
     const chatLog = document.getElementById('chat-log');
     const chatInput = document.getElementById('chat-input');
-    const GEMINI_API_KEY = 'AIzaSyBvJtONYn5RvXWOHj6rbtdCG8i6QwNX5Fg';
+    const GEMINI_API_KEY = '';
     const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`;
 
     chatCircle.addEventListener('click', () => {
