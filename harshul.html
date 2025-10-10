@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Admin">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshul Enterprise - Clients and Reviews</title>
+    <meta name="description" content="Showcasing clients and reviews for Harshul Enterprise.">
+    <meta name="author" content="Harshul Nihalani">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/harshul.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #d1d5db; zoom: 1.25; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1f2937; }
+        ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+        .glass-card { background: rgba(31, 41, 55, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; }
+        .section-title { text-shadow: 0 0 15px rgba(79, 70, 229, 0.5); }
+        .nav-link { position: relative; transition: color 0.3s; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #4f46e5; transition: width 0.3s; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-white">HN.</a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="#clients" class="nav-link">Our Clients</a>
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                </nav>
+                 <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-700">Home</a>
+            <a href="#clients" class="block py-2 px-4 text-sm hover:bg-gray-700">Our Clients</a>
+            <a href="#reviews" class="block py-2 px-4 text-sm hover:bg-gray-700">Reviews</a>
+        </div>
+    </header>
+
+    <section id="home" class="min-h-screen flex items-center bg-cover bg-center">
+        <div class="absolute inset-0 bg-gray-900/50"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">Harshul Enterprise</h1>
+                <p class="text-lg md:text-2xl text-indigo-300 mb-8">Our Clients and Their Reviews</p>
+                <p class="text-gray-300 max-w-xl mx-auto mb-10">
+                    We take pride in our work and the relationships we build with our clients. Here's what they have to say about us.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-20">
+        <section id="clients" class="mb-24 fade-in-section">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white mb-12">Our Clients</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex justify-center items-center p-4 bg-gray-800 rounded-lg">
+                    <img src="https://logo.clearbit.com/street9.com" alt="Street9 Logo" class="h-12">
+                </div>
+                <div class="flex justify-center items-center p-4 bg-gray-800 rounded-lg">
+                    <img src="https://logo.clearbit.com/sareeselections.com" alt="Saree Selections Logo" class="h-12">
+                </div>
+                <div class="flex justify-center items-center p-4 bg-gray-800 rounded-lg">
+                    <img src="https://logo.clearbit.com/yovanattire.in" alt="Yovan Attire Logo" class="h-12">
+                </div>
+                <div class="flex justify-center items-center p-4 bg-gray-800 rounded-lg">
+                    <img src="https://logo.clearbit.com/vgocart.com" alt="VGOCart Logo" class="h-12">
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="fade-in-section">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white mb-12">Client Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 flex flex-col">
+                    <i class="fas fa-quote-left text-indigo-400 text-3xl mb-4"></i>
+                    <p class="text-gray-300 mb-6 flex-grow">"Harshul is an exceptional developer with a keen eye for detail. He delivered our project on time and exceeded our expectations with his creativity and technical skill."</p>
+                    <div class="mt-auto">
+                        <p class="font-bold text-white">Street9</p>
+                        <p class="text-sm text-gray-400">CEO, Tech Solutions Inc.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-8 flex flex-col">
+                    <i class="fas fa-quote-left text-indigo-400 text-3xl mb-4"></i>
+                    <p class="text-gray-300 mb-6 flex-grow">"Working with Harshul was a fantastic experience. His communication was clear, and he was always ready to go the extra mile to ensure the final product was perfect."</p>
+                    <div class="mt-auto">
+                        <p class="font-bold text-white">Saree Selections</p>
+                        <p class="text-sm text-gray-400">Marketing Head, Creative Co.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-8 flex flex-col">
+                    <i class="fas fa-quote-left text-indigo-400 text-3xl mb-4"></i>
+                    <p class="text-gray-300 mb-6 flex-grow">"The e-commerce platform Harshul built for us is robust, fast, and easy to manage. His expertise was invaluable throughout the entire process."</p>
+                    <div class="mt-auto">
+                        <p class="font-bold text-white">Yovan Attire</p>
+                        <p class="text-sm text-gray-400">Founder, Fashion Forward</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 mt-20">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+                <p class="text-sm text-gray-400">&copy; 2025 Harshul Nihalani. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('bg-gray-900', window.scrollY > 50);
+                navbar.classList.toggle('shadow-lg', window.scrollY > 50);
+            });
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetEl = document.querySelector(this.getAttribute('href'));
+                    if(targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                    if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+                });
+            });
+            const fadeSections = document.querySelectorAll('.fade-in-section');
+            const fadeObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            fadeSections.forEach(section => fadeObserver.observe(section));
+        });
+    </script>
+</body>
+</html>
