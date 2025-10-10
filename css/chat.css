@@ -1,0 +1,51 @@
+/* Styling for the AI Chat Widget */
+#chat-widget {
+    z-index: 1000;
+}
+
+#chat-circle {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+#chat-circle:hover {
+    transform: scale(1.1);
+}
+
+#chat-box {
+    transition: opacity 0.3s, transform 0.3s;
+    transform-origin: bottom right;
+}
+
+#chat-box.hidden {
+    transform: scale(0);
+    opacity: 0;
+}
+
+#chat-log .user-message {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#chat-log .user-message p {
+    background-color: #4f46e5;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px 15px 0 15px;
+    display: inline-block;
+    max-width: 80%;
+}
+
+#chat-log .ai-message {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#chat-log .ai-message p {
+    background-color: #374151;
+    color: #d1d5db;
+    padding: 8px 12px;
+    border-radius: 15px 15px 15px 0;
+    display: inline-block;
+    max-width: 80%;
+}

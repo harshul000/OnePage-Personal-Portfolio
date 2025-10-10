@@ -42,6 +42,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/chat.css">
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: #111827; color: #d1d5db; zoom: 1.25; }
@@ -275,6 +276,26 @@
         </div>
     </footer>
 
+    <!-- AI Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-5 right-5">
+        <div id="chat-circle" class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center cursor-pointer text-white text-3xl">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        <div id="chat-box" class="hidden absolute bottom-20 right-0 w-80 bg-gray-800 rounded-lg shadow-lg">
+            <div class="p-4 bg-indigo-600 text-white rounded-t-lg">
+                <h3 class="font-bold">AI Chat Support</h3>
+                <button id="close-chat" class="absolute top-2 right-2 text-white">&times;</button>
+            </div>
+            <div id="chat-log" class="p-4 h-64 overflow-y-auto">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="p-4 border-t border-gray-700">
+                <input type="text" id="chat-input" class="w-full bg-gray-700 text-white rounded-lg p-2" placeholder="Ask a question...">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/chat.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const navbar = document.getElementById('navbar');
