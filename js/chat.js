@@ -52,7 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!response.ok) {
-                throw new Error('API response was not ok.');
+                const errorData = await response.json().catch(() => null);
+                const errorMessage = errorData?.error?.message || `API Error: ${response.status} ${response.statusText}`;
+                throw new Error(errorMessage);
             }
 
             const data = await response.json();
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage('ai', aiMessage);
         } catch (error) {
             console.error('Error getting Gemini response:', error);
-            appendMessage('ai', 'Sorry, I am having trouble connecting. Please try again later.');
+            appendMessage('ai', `Error: ${error.message}`);
         }
     }
 });
