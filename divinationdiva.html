@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divination Diva - Discover Your Destiny</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ---------------------------------
+           Global Styles & Variables
+           --------------------------------- */
+        :root {
+            --primary-color: #6a1b9a; /* A slightly brighter purple */
+            --secondary-color: #fce4ec; /* Soft Pink */
+            --accent-gold: #ffc107; /* Vibrant Gold */
+            --dark-bg: #1a0129;
+            --light-text: #f3e5f5;
+            --text-color: #333;
+            --heading-font: 'Playfair Display', serif;
+            --body-font: 'Lora', serif;
+            --gradient-bg: linear-gradient(135deg, #4a0e6b, #1a0129);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--heading-font);
+            color: var(--accent-gold);
+            margin-bottom: 0.5em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        p {
+            margin-bottom: 1.2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-gold);
+        }
+
+        /* Page container */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* ---------------------------------
+           Header & Navigation
+           --------------------------------- */
+        header {
+            background-color: rgba(26, 1, 41, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 60px; /* Increased size */
+            height: 60px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .logo-text {
+            font-family: var(--heading-font);
+            font-size: 2rem; /* Increased size */
+            font-weight: 700;
+            color: #fff;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav li {
+            margin-left: 2.5rem;
+        }
+
+        header nav a {
+            font-weight: 700;
+            padding-bottom: 5px;
+            color: var(--light-text);
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        header nav a:hover,
+        header nav a.active {
+            color: var(--accent-gold);
+            border-bottom-color: var(--accent-gold);
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text { font-size: 1.5rem; }
+            header nav ul { display: none; }
+        }
+
+
+        /* ---------------------------------
+           Footer
+           --------------------------------- */
+        footer {
+            background: var(--gradient-bg);
+            color: var(--light-text);
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--primary-color);
+        }
+
+        /* ---------------------------------
+           Buttons
+           --------------------------------- */
+        .cta-button, .cta-button-secondary {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            font-weight: 700;
+            font-family: var(--body-font);
+            border-radius: 50px; /* Rounded buttons */
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button {
+            background-image: linear-gradient(to right, #ffc107, #ff9800);
+            color: #1a0129;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 193, 7, 0.4);
+        }
+
+        .cta-button-secondary {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+        }
+        .cta-button-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+        }
+
+        /* ---------------------------------
+           Home Page: Hero & Featured Services
+           --------------------------------- */
+        .hero {
+            background: #000;
+            text-align: center;
+            padding: 6rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(330deg, #1a0129 0%, #4a0e6b 50%, #0d0d0d 100%);
+            background-size: auto, cover;
+            animation: slowPan 30s linear infinite alternate;
+            opacity: 0.9;
+        }
+        @keyframes slowPan {
+            from { background-position: 0% 0%; }
+            to { background-position: 100% 100%; }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } }
+
+        .featured-services {
+            padding: 4rem 0;
+            background-color: var(--dark-bg);
+        }
+
+        .featured-services h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(74, 14, 107, 0.2);
+            border: 1px solid var(--primary-color);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(106, 27, 154, 0.5);
+            border-color: var(--accent-gold);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ---------------------------------
+           Horoscopes Page
+           --------------------------------- */
+        .horoscope-page { padding: 3rem 0; }
+
+        .horoscope-page h2 { font-size: 2.8rem; text-align: center; }
+        .horoscope-page .intro-p {
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--light-text);
+        }
+
+        .horoscope-tabs {
+            border-bottom: 1px solid var(--primary-color);
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tab-link {
+            background: none; border: none; padding: 1rem 1.5rem;
+            cursor: pointer; font-family: var(--body-font);
+            font-size: 1.1rem; font-weight: 700; color: #aaa;
+            position: relative; top: 1px; border-bottom: 3px solid transparent;
+        }
+        .tab-link.active, .tab-link:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .zodiac-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
+
+        .zodiac-card {
+            background: rgba(74, 14, 107, 0.1);
+            border: 1px solid var(--primary-color);
+            border-radius: 15px; text-align: center; padding: 1.5rem 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease; cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+        .zodiac-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+            border-color: var(--accent-gold);
+        }
+        .zodiac-card svg { width: 60px; height: 60px; margin: 0 auto 1rem; }
+        .zodiac-card h3 {
+            margin: 0.5rem 0 0.2rem; color: var(--light-text);
+            font-family: var(--body-font); font-weight: 700; font-size: 1.2rem;
+        }
+        .zodiac-card p { font-size: 0.9rem; color: #ccc; margin: 0; }
+
+        @media (max-width: 992px) { .zodiac-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (max-width: 768px) { .zodiac-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 500px) { .zodiac-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        /* ---------------------------------
+           Services & Pricing Page
+           --------------------------------- */
+        .services-page { padding: 3rem 0; }
+        .services-page h2 { font-size: 2.8rem; text-align: center; margin-bottom: 3rem; }
+
+        .price-list-container {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+            background: rgba(26, 1, 41, 0.5);
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
+            border-radius: 15px; overflow: hidden;
+        }
+        .price-column { padding: 0; }
+        .price-column:first-child { border-right: 1px solid var(--primary-color); }
+
+        .price-header {
+            background: var(--gradient-bg);
+            padding: 2rem; text-align: center;
+        }
+        .price-header h3 { color: #fff; font-size: 1.8rem; margin: 0; }
+
+        .price-category { padding: 2rem; border-bottom: 1px solid var(--primary-color); }
+        .price-column .price-category:last-child { border-bottom: none; }
+        .price-category h4 {
+            font-family: var(--body-font); font-weight: 700;
+            font-size: 1rem; letter-spacing: 1px; text-transform: uppercase;
+            color: var(--accent-gold); border-bottom: none;
+            padding-bottom: 0; display: block; margin-bottom: 1.5rem;
+        }
+        .price-item {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1rem; font-size: 1.1rem;
+        }
+        .price-item span { color: var(--light-text); }
+        .price-item .price { font-weight: 700; font-size: 1.3rem; color: var(--accent-gold); }
+
+        .call-to-action-box {
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png'), var(--gradient-bg);
+            color: #fff; text-align: center; padding: 3rem;
+            border-radius: 15px; margin-top: 3rem;
+        }
+        .call-to-action-box h3 { color: #fff; font-size: 2.2rem; margin: 0 0 1rem; }
+        .call-to-action-box p { margin: 0 0 1.5rem; font-size: 1.1rem; color: var(--light-text); }
+        .call-to-action-box .cta-button { box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+
+        .service-divider { border: 0; height: 1px; background: var(--primary-color); margin: 4rem auto; }
+        .other-services { text-align: center; }
+        .other-services h2 { font-size: 2.5rem; }
+        .other-services h3 { font-size: 2rem; color: var(--light-text); }
+        .other-services p { max-width: 700px; margin: 0 auto 1.5rem; color: var(--light-text); }
+        .other-services .price-item {
+            max-width: 700px; margin: 1rem auto; padding: 1.2rem;
+            background: rgba(74, 14, 107, 0.2);
+            border: 1px solid var(--primary-color); border-radius: 10px;
+        }
+        .other-services .cta-button-secondary { margin-top: 1rem; }
+
+        @media (max-width: 768px) {
+            .price-list-container { grid-template-columns: 1fr; }
+            .price-column:first-child { border-right: none; border-bottom: 1px solid var(--primary-color); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="a.png" alt="Divination Diva Logo" class="logo-img">
+                <a href="#home-page" class="logo-text page-link">Divination Diva</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home-page" class="page-link active">Home</a></li>
+                    <li><a href="#horoscopes-page" class="page-link">Horoscopes</a></li>
+                    <li><a href="#services-page" class="page-link">Tarot & Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Section -->
+        <section id="home-page" class="page active">
+            <div class="hero">
+                <div class="container">
+                    <h1>Discover Your Destiny</h1>
+                    <p>Guiding you through love and life with insightful tarot and astrology readings.</p>
+                    <a href="#services-page" class="cta-button page-link">Book a Reading Today</a>
+                </div>
+            </div>
+
+            <div class="featured-services">
+                <div class="container">
+                    <h2>Our Sacred Services</h2>
+                    <div class="service-grid">
+                        <div class="service-card">
+                            <h3>Zodiac Horoscopes</h3>
+                            <p>Get your free daily, weekly, and monthly insights for all 12 zodiac signs, curated with cosmic wisdom.</p>
+                            <a href="#horoscopes-page" class="cta-button-secondary page-link">Read Now</a>
+                        </div>
+                        <div class="service-card">
+                            <h3>In-Depth Tarot Readings</h3>
+                            <p>Connect via voice, call, or video for a personalized tarot analysis that illuminates your path.</p>
+                            <a href="#services-page" class="cta-button-secondary page-link">View Pricing</a>
+                        </div>
+                        <div class="service-card">
+                            <h3>Natal Birth Charts</h3>
+                            <p>Unlock the secrets of your soul's blueprint with a detailed and insightful birth chart analysis.</p>
+                            <a href="#services-page" class="cta-button-secondary page-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horoscopes Page Section -->
+        <section id="horoscopes-page" class="page">
+             <div class="horoscope-page">
+                <div class="container">
+                    <h2>Read All Zodiac Sign's Horoscopes</h2>
+                    <p class="intro-p">Read free Daily, Weekly and Monthly horoscopes for all zodiac signs. Our predictions are carefully curated by experts to provide insights into love, career, health, and more.</p>
+
+                    <div class="horoscope-tabs">
+                        <button class="tab-link active" onclick="openHoroscope(event, 'Daily')">Daily</button>
+                        <button class="tab-link" onclick="openHoroscope(event, 'Weekly')">Weekly</button>
+                        <button class="tab-link" onclick="openHoroscope(event, 'Monthly')">Monthly</button>
+                    </div>
+
+                    <div id="Daily" class="tab-content active">
+                        <div class="zodiac-grid">
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M50 10 L70 30 L50 50 L30 30 Z M50 50 C30 50 20 70 20 90 M80 90 C80 70 70 50 50 50" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Aries</h3> <p>Mar 21-Apr 19</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><circle cx="50" cy="40" r="20" fill="none" stroke="#ffc107" stroke-width="4"/><path d="M30 40 C30 70 70 70 70 40" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Taurus</h3> <p>Apr 20-May 20</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M25 20 L25 80 M75 20 L75 80 M20 25 L80 25 M20 75 L80 75" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Gemini</h3> <p>May 21-Jun 20</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M20 50 a25 25 0 1 1 50 0 M80 50 a25 25 0 1 0 -50 0" fill="none" stroke="#ffc107" stroke-width="4" transform="rotate(30 50 50)"/></svg> <h3>Cancer</h3> <p>Jun 21-Jul 22</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><circle cx="35" cy="35" r="15" fill="none" stroke="#ffc107" stroke-width="4"/><path d="M35 50 C50 20 80 20 80 50 S70 90 50 80" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Leo</h3> <p>Jul 23-Aug 22</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M20 20 L20 80 M40 20 L40 80 M60 20 L60 80 L80 60 C80 40 60 40 60 60 L60 80" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Virgo</h3> <p>Aug 23-Sep 22</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M10 70 L90 70 M20 60 L80 60 M50 60 L50 30 L30 10 L70 10 L50 30" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Libra</h3> <p>Sep 23-Oct 22</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M20 20 L20 80 M40 20 L40 80 M60 20 L60 80 L85 55 L60 80" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Scorpio</h3> <p>Oct 23-Nov 21</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M20 80 L80 20 M50 20 L80 20 L80 50 M40 60 L60 40" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Sagittarius</h3> <p>Nov 22-Dec 21</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M20 40 L40 20 L60 40 L60 80 C80 80 80 60 60 60" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Capricorn</h3> <p>Dec 22-Jan 19</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M20 40 L40 60 L60 40 L80 60 M20 65 L40 85 L60 65 L80 85" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Aquarius</h3> <p>Jan 20-Feb 18</p> </div>
+                            <div class="zodiac-card"> <svg viewBox="0 0 100 100"><path d="M20 20 C 80 20 80 80 20 80 M80 20 C 20 20 20 80 80 80 M50 10 L50 90" fill="none" stroke="#ffc107" stroke-width="4"/></svg> <h3>Pisces</h3> <p>Feb 19-Mar 20</p> </div>
+                        </div>
+                    </div>
+
+                    <div id="Weekly" class="tab-content"><p style="text-align:center;">Weekly horoscope content for all signs would be displayed here.</p></div>
+                    <div id="Monthly" class="tab-content"><p style="text-align:center;">Monthly horoscope content for all signs would be displayed here.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page Section -->
+        <section id="services-page" class="page">
+            <div class="services-page">
+                <div class="container">
+                    <h2>Tarot Card Reading Price List</h2>
+                    <div class="price-list-container">
+                        <div class="price-column">
+                            <div class="price-header"> <h3>Basic Analysis With Tarot</h3> </div>
+                            <div class="price-category"><h4>VOICE NOTE</h4> <div class="price-item"> <span>Voice Note 1 ques</span> <span class="price">₹49</span> </div><div class="price-item"> <span>Voice Note 3 ques</span> <span class="price">₹149</span> </div><div class="price-item"> <span>Voice Note 5 ques</span> <span class="price">₹199</span> </div></div>
+                            <div class="price-category"><h4>VOICE CALL</h4> <div class="price-item"> <span>15 minutes</span> <span class="price">₹249</span> </div><div class="price-item"> <span>30 minutes</span> <span class="price">₹499</span> </div></div>
+                            <div class="price-category"><h4>VIDEO CALL</h4> <div class="price-item"> <span>15 minutes</span> <span class="price">₹349</span> </div><div class="price-item"> <span>30 minutes</span> <span class="price">₹699</span> </div></div>
+                        </div>
+                        <div class="price-column">
+                            <div class="price-header"> <h3>In-Depth Analysis With Tarot</h3> </div>
+                            <div class="price-category"><h4>VOICE NOTE</h4> <div class="price-item"> <span>Voice Note 1 ques</span> <span class="price">₹149</span> </div><div class="price-item"> <span>Voice Note 3 ques</span> <span class="price">₹449</span> </div><div class="price-item"> <span>Voice Note 5 ques</span> <span class="price">₹599</span> </div></div>
+                            <div class="price-category"><h4>VOICE CALL</h4> <div class="price-item"> <span>15 minutes</span> <span class="price">₹749</span> </div><div class="price-item"> <span>30 minutes</span> <span class="price">₹1499</span> </div></div>
+                            <div class="price-category"><h4>VIDEO CALL</h4> <div class="price-item"> <span>15 minutes</span> <span class="price">₹1049</span> </div><div class="price-item"> <span>30 minutes</span> <span class="price">₹2099</span> </div></div>
+                        </div>
+                    </div>
+                    <div class="call-to-action-box">
+                        <h3>Book A Reading Today!</h3>
+                        <p>Guiding you through love and life. Contact us to schedule your session.</p>
+                        <a href="mailto:contact@divinationdiva.com" class="cta-button">Email to Book</a>
+                    </div>
+                    <hr class="service-divider">
+                    <div class="other-services">
+                        <h2>Other Services</h2>
+                        <h3>Natal Birth Chart Analysis</h3>
+                        <p>Discover your life's blueprint. A natal chart reading provides a deep dive into your personality, strengths, challenges, and life path based on the exact time, date, and place of your birth.</p>
+                        <div class="price-item"><span>Full Natal Chart Report + 30-min Consultation</span><span class="price">₹2499</span></div>
+                        <a href="mailto:contact@divinationdiva.com" class="cta-button-secondary">Book Your Chart</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Divination Diva. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageLinks = document.querySelectorAll('.page-link');
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('header nav a');
+
+            function showPage(pageId) {
+                pages.forEach(page => page.classList.remove('active'));
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) targetPage.classList.add('active');
+
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${pageId}`);
+                });
+                window.scrollTo(0, 0);
+            }
+
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('href').substring(1);
+                    showPage(pageId);
+                });
+            });
+
+            const initialPage = window.location.hash ? window.location.hash.substring(1) : 'home-page';
+            showPage(initialPage);
+        });
+        
+        function openHoroscope(evt, horoscopeName) {
+            const tabcontent = document.querySelectorAll(".tab-content");
+            tabcontent.forEach(tab => tab.classList.remove("active"));
+            
+            const tablinks = document.querySelectorAll(".tab-link");
+            tablinks.forEach(link => link.classList.remove("active"));
+
+            document.getElementById(horoscopeName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
+
