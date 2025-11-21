@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <link rel="manifest" href="manifest.json">
@@ -14,11 +15,13 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Tags -->
-    <title>Harshul Nihalani - Software Engineer Portfolio</title>
-    <meta name="description" content="The professional portfolio of Harshul Nihalani, a skilled Software Engineer and Web Developer based in Bangalore. Showcasing projects, skills, and professional journey.">
-    <meta name="keywords" content="Harshul Nihalani, Harshul, Nihalani, Software Engineer, Web Developer, Portfolio, Bangalore, Presidency University, Arcgate Technologies, Full-Stack Developer, BCA, MCA">
+    <title>Harshul Nihalani - Data Engineer Portfolio</title>
+    <meta name="description"
+        content="The professional portfolio of Harshul Nihalani, an experienced Data Engineer with 3 years of expertise in Python, PySpark, SQL, and building scalable data pipelines. Based in India, specializing in Microsoft Fabric, Airflow, Dagster, and Power BI.">
+    <meta name="keywords"
+        content="Harshul Nihalani, Harshul, Nihalani, Data Engineer, Python, PySpark, SQL, ETL, Data Pipelines, Microsoft Fabric, Airflow, Dagster, Power BI, Snowflake, MySQL, PostgreSQL, India, Data Analytics">
     <meta name="author" content="Harshul Nihalani">
     <link rel="canonical" href="https://harshul.site">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -27,15 +30,17 @@
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://harshul.site">
-    <meta property="og:title" content="Harshul Nihalani - Software Engineer Portfolio">
-    <meta property="og:description" content="Explore the portfolio of Harshul Nihalani, showcasing his journey and skills in software engineering and web development.">
+    <meta property="og:title" content="Harshul Nihalani - Data Engineer Portfolio">
+    <meta property="og:description"
+        content="Explore the portfolio of Harshul Nihalani, showcasing his 3 years of experience in data engineering, building scalable data pipelines, and expertise in Python, PySpark, SQL, and modern orchestration tools.">
     <meta property="og:image" content="https://placehold.co/1200x630/111827/d1d5db?text=Harshul+Nihalani">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://harshul.site">
-    <meta name="twitter:title" content="Harshul Nihalani - Software Engineer Portfolio">
-    <meta name="twitter:description" content="Explore the portfolio of Harshul Nihalani, showcasing his journey and skills in software engineering and web development.">
+    <meta name="twitter:title" content="Harshul Nihalani - Data Engineer Portfolio">
+    <meta name="twitter:description"
+        content="Explore the portfolio of Harshul Nihalani, showcasing his 3 years of experience in data engineering, building scalable data pipelines, and expertise in Python, PySpark, SQL, and modern orchestration tools.">
     <meta name="twitter:image" content="https://placehold.co/1200x630/111827/d1d5db?text=Harshul+Nihalani">
 
     <!-- Dependencies -->
@@ -44,28 +49,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/chat.css">
     <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #111827; color: #d1d5db; zoom: 1.25; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1f2937; }
-        ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
-        .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
-        .glass-card { background: rgba(31, 41, 55, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; }
-        .timeline-item { position: relative; padding-bottom: 2.5rem; padding-left: 2.5rem; border-left: 2px solid #374151; }
-        .timeline-item:last-child { border-left: 2px solid transparent; }
-        .timeline-dot { position: absolute; left: -0.5rem; top: 0.25rem; height: 1rem; width: 1rem; background-color: #4f46e5; border-radius: 9999px; border: 3px solid #111827; }
-        .btn-primary { background-color: #4f46e5; transition: background-color 0.3s ease; }
-        .btn-primary:hover { background-color: #6366f1; }
-        .btn-secondary { background-color: transparent; border: 2px solid #6366f1; color: #d1d5db; transition: background-color 0.3s ease, color 0.3s ease; }
-        .btn-secondary:hover { background-color: #6366f1; color: #ffffff; }
-        .section-title { text-shadow: 0 0 15px rgba(79, 70, 229, 0.5); }
-        .nav-link { position: relative; transition: color 0.3s; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #4f46e5; transition: width 0.3s; }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #d1d5db;
+            zoom: 1.25;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+            padding-left: 2.5rem;
+            border-left: 2px solid #374151;
+        }
+
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -0.5rem;
+            top: 0.25rem;
+            height: 1rem;
+            width: 1rem;
+            background-color: #4f46e5;
+            border-radius: 9999px;
+            border: 3px solid #111827;
+        }
+
+        .btn-primary {
+            background-color: #4f46e5;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #6366f1;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #6366f1;
+            color: #d1d5db;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #6366f1;
+            color: #ffffff;
+        }
+
+        .section-title {
+            text-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4f46e5;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
     </style>
 </head>
+
 <body class="antialiased">
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
@@ -81,14 +181,14 @@
                     <a href="#contact" class="nav-link">Contact</a>
                     <a href="harshul.html" class="nav-link">Harshul Enterprise</a>
                 </nav>
-                 <div class="md:hidden">
+                <div class="md:hidden">
                     <button id="menu-btn" class="text-white focus:outline-none">
                         <i class="fas fa-bars fa-lg"></i>
                     </button>
                 </div>
             </div>
         </div>
-         <!-- Mobile Menu -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
             <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Home</a>
             <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
@@ -106,13 +206,20 @@
         <div class="container mx-auto px-6 text-center relative z-10">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">Harshul Nihalani</h1>
-                <p class="text-lg md:text-2xl text-indigo-300 mb-8">Software Engineer | Web Developer | Tech Enthusiast</p>
+                <p class="text-lg md:text-2xl text-indigo-300 mb-8">Data Engineer | Python & PySpark Expert | Pipeline
+                    Architect</p>
                 <p class="text-gray-300 max-w-xl mx-auto mb-10">
-                    Crafting elegant, efficient, and user-centric digital experiences. I turn complex problems into beautiful, intuitive software solutions.
+                    Building scalable data pipelines and transforming raw data into actionable insights. Specialized in
+                    orchestrating complex ETL workflows and delivering data-driven solutions with 3 years of hands-on
+                    experience.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#projects" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg inline-block w-full sm:w-auto">View My Work</a>
-                    <a href="https://gsq0uc-r1.myshopify.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=153802113275" target="_blank" rel="noopener noreferrer" class="btn-secondary font-bold py-3 px-8 rounded-full text-lg inline-block w-full sm:w-auto">
+                    <a href="#projects"
+                        class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg inline-block w-full sm:w-auto">View
+                        My Work</a>
+                    <a href="https://gsq0uc-r1.myshopify.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=153802113275"
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn-secondary font-bold py-3 px-8 rounded-full text-lg inline-block w-full sm:w-auto">
                         <i class="fas fa-server mr-2"></i>Link to Private Server
                     </a>
                 </div>
@@ -131,32 +238,70 @@
                     <div class="md:w-3/5">
                         <h3 class="text-2xl font-semibold text-white mb-4">Hello! I'm Harshul Nihalani.</h3>
                         <p class="mb-4 text-gray-300">
-                            I'm a passionate Software Engineer based in Bangalore, with a strong foundation in computer applications and a drive for continuous learning. My journey in tech began with a curiosity for how things work, which quickly evolved into a career focused on building robust and scalable software.
+                            I'm a passionate Data Engineer based in India, with 3 years of hands-on experience building
+                            robust, scalable data pipelines and transforming raw data into valuable insights. My journey
+                            in data engineering has been driven by a fascination with the power of data to solve complex
+                            business problems.
                         </p>
                         <p class="mb-6 text-gray-300">
-                            From my early internships to my role at Arcgate Technologies, I've honed my skills in web development, problem-solving, and collaborative teamwork. I'm currently expanding my expertise through a Master's in Computer Applications to stay at the forefront of technological innovation.
+                            Throughout my career, I've specialized in managing full-scale data pipelines in Microsoft
+                            Fabric, leveraging Python and PySpark for data processing, and utilizing SQL across multiple
+                            platforms including MySQL, PostgreSQL, and Snowflake. I'm proficient in orchestration tools
+                            like Apache Airflow and Dagster, and I bring data to life through Power BI dashboards and
+                            reports.
                         </p>
-                         <div class="flex space-x-4">
-                           <a href="#contact" class="btn-primary text-white font-semibold py-2 px-6 rounded-lg">Get In Touch</a>
-                           <a href="#" class="bg-gray-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-500 transition-colors">Download CV</a>
+                        <div class="flex space-x-4">
+                            <a href="#contact" class="btn-primary text-white font-semibold py-2 px-6 rounded-lg">Get In
+                                Touch</a>
+                            <a href="#"
+                                class="bg-gray-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-500 transition-colors">Download
+                                CV</a>
                         </div>
                     </div>
                     <div class="md:w-2/5 w-full">
-                         <h3 class="text-2xl font-semibold text-white mb-4">My Technical Toolbox</h3>
-                         <div class="space-y-4">
-                             <div>
-                                 <h4 class="font-semibold text-indigo-300 mb-2">Frontend</h4>
-                                 <div class="flex flex-wrap gap-2"><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">HTML5 & CSS3</span><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">JavaScript (ES6+)</span><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">React</span><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Tailwind CSS</span></div>
-                             </div>
-                             <div>
-                                 <h4 class="font-semibold text-indigo-300 mb-2">Backend</h4>
-                                 <div class="flex flex-wrap gap-2"><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Node.js</span><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Express.js</span></div>
-                             </div>
-                              <div>
-                                 <h4 class="font-semibold text-indigo-300 mb-2">Tools & Platforms</h4>
-                                 <div class="flex flex-wrap gap-2"><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Git & GitHub</span><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Shopify</span><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Firebase</span><span class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">MongoDB</span></div>
-                             </div>
-                         </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">My Technical Toolbox</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-indigo-300 mb-2">Data Processing</h4>
+                                <div class="flex flex-wrap gap-2"><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Python</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">PySpark</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">SQL</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-indigo-300 mb-2">Databases</h4>
+                                <div class="flex flex-wrap gap-2"><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">MySQL</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">PostgreSQL</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Snowflake</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">MongoDB</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-indigo-300 mb-2">Orchestration & Platforms</h4>
+                                <div class="flex flex-wrap gap-2"><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Apache
+                                        Airflow</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Dagster</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Microsoft
+                                        Fabric</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Azure</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-indigo-300 mb-2">Visualization & Tools</h4>
+                                <div class="flex flex-wrap gap-2"><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Power
+                                        BI</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Git
+                                        & GitHub</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Docker</span><span
+                                        class="bg-indigo-500/20 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Jupyter</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,63 +310,295 @@
         <!-- My Journey Section -->
         <section id="journey" class="mb-24 fade-in-section">
             <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white mb-16">My Journey</h2>
-            <div class="max-w-3xl mx-auto"><div class="timeline">
-                <div class="timeline-item"><div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">July 2025</time><h3 class="text-xl font-semibold text-white mt-1">Started MCA from Jain University</h3><p class="text-gray-400 mt-1">Began my distance Master of Computer Applications to deepen my technical expertise while working full-time.</p></div>
-                <div class="timeline-item"><div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">June 2025</time><h3 class="text-xl font-semibold text-white mt-1">Software Engineer at Arcgate Technologies</h3><p class="text-gray-400 mt-1">Embarked on my professional career, applying my skills to build innovative software solutions.</p></div>
-                <div class="timeline-item"><div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">May 2025</time><h3 class="text-xl font-semibold text-white mt-1">Graduated BCA from Presidency University</h3><p class="text-gray-400 mt-1">Completed my Bachelor's with a final CGPA of 8.9, gaining a strong foundation in computer science.</p></div>
-                <div class="timeline-item"><div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">November 2024</time><h3 class="text-xl font-semibold text-white mt-1">Internship at Learning Buds US</h3><p class="text-gray-400 mt-1">Gained valuable international experience and contributed to real-world projects.</p></div>
-                <div class="timeline-item"><div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">February 2024</time><h3 class="text-xl font-semibold text-white mt-1">Internship at Skill Vertex</h3><p class="text-gray-400 mt-1">Enhanced my practical skills in a dynamic and fast-paced tech environment.</p></div>
-                <div class="timeline-item"><div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">2023</time><h3 class="text-xl font-semibold text-white mt-1">Internship with Acmagrade</h3><p class="text-gray-400 mt-1">My first step into the professional world, where I learned key industry practices.</p></div>
-                <div class="timeline-item"><div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">April 2022</time><h3 class="text-xl font-semibold text-white mt-1">Graduated 12th from DPS Udaipur</h3><p class="text-gray-400 mt-1">Completed my higher secondary education with a score of 90%, setting the stage for my tech journey.</p></div>
-            </div></div>
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">November 2022 -
+                            Present</time>
+                        <h3 class="text-xl font-semibold text-white mt-1">Senior Data Engineer</h3>
+                        <p class="text-gray-400 mt-1">Leading data infrastructure projects, managing full-scale data
+                            pipelines in Microsoft Fabric, and architecting ETL solutions using Python, PySpark, and
+                            modern orchestration tools. Delivering business intelligence through Power BI dashboards.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">December 2021 -
+                            October 2022</time>
+                        <h3 class="text-xl font-semibold text-white mt-1">Data Engineer</h3>
+                        <p class="text-gray-400 mt-1">Built and maintained data pipelines, worked extensively with SQL
+                            databases (MySQL, PostgreSQL, Snowflake), and implemented automation workflows using Apache
+                            Airflow and Dagster for data orchestration.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">July 2021 -
+                            November 2021</time>
+                        <h3 class="text-xl font-semibold text-white mt-1">Junior Data Engineer</h3>
+                        <p class="text-gray-400 mt-1">Started my data engineering journey, learning Python and PySpark
+                            for data processing, building ETL pipelines, and contributing to data warehouse development
+                            projects.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">May 2021</time>
+                        <h3 class="text-xl font-semibold text-white mt-1">Graduated BCA from Presidency University</h3>
+                        <p class="text-gray-400 mt-1">Completed my Bachelor's with a final CGPA of 8.9, building a
+                            strong foundation in computer science and data structures.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div><time class="text-sm font-medium text-gray-400">April
+                            2018</time>
+                        <h3 class="text-xl font-semibold text-white mt-1">Graduated 12th from DPS Udaipur</h3>
+                        <p class="text-gray-400 mt-1">Completed my higher secondary education with a score of 90%,
+                            setting the stage for my journey in technology and data.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="mb-24 fade-in-section">
             <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white mb-12">My Work</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=Harshul.site" alt="Screenshot of Harshul.site portfolio" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Personal Portfolio</h3><p class="text-gray-400 mb-4 text-sm">My personal portfolio website built to showcase my skills, projects, and professional timeline.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Portfolio</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Web Dev</span></div><a href="https://harshul.site" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=Street9.com" alt="Screenshot of Street9.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Street9</h3><p class="text-gray-400 mb-4 text-sm">An online fashion brand offering trendy and contemporary apparel for the modern woman.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Fashion</span></div><a href="https://street9.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=SareeSelections.com" alt="Screenshot of Sareeselections.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Saree Selections</h3><p class="text-gray-400 mb-4 text-sm">A specialized e-commerce store offering a wide variety of traditional Indian sarees and ethnic wear.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Ethnic Wear</span></div><a href="https://www.sareeselections.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=YovanAttire.in" alt="Screenshot of Yovanattire.in project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Yovan Attire</h3><p class="text-gray-400 mb-4 text-sm">An online destination for curated men's fashion, focusing on quality and modern style.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Men's Fashion</span></div><a href="https://yovanattire.in/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=VgoCart.com" alt="Screenshot of Vgocart.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">VGOCart</h3><p class="text-gray-400 mb-4 text-sm">A multi-vendor e-commerce marketplace offering a wide range of products across various categories.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Marketplace</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span></div><a href="https://www.vgocart.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=OkkaBeauty.com" alt="Screenshot of Okkabeauty.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Okka Beauty</h3><p class="text-gray-400 mb-4 text-sm">A premier e-commerce destination for authentic beauty and cosmetic products in the Middle East.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Beauty</span></div><a href="https://www.okkabeauty.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=AhluwaliaLogistics.com" alt="Screenshot of Ahluwalialogistics.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Ahluwalia Logistics</h3><p class="text-gray-400 mb-4 text-sm">Corporate site for a leading integrated logistics and supply chain solutions provider in India.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Corporate</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Logistics</span></div><a href="https://ahluwalialogistics.com" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=K2KVacations.in" alt="Screenshot of K2kvacations.in project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">K2K Vacations</h3><p class="text-gray-400 mb-4 text-sm">A travel and tourism website offering curated vacation packages and tour services.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Travel</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Tourism</span></div><a href="https://k2kvacations.in" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=DonateKart.com" alt="Screenshot of Donatekart.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">DonateKart</h3><p class="text-gray-400 mb-4 text-sm">India's most trusted and transparent crowdfunding platform for non-profits and charities.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Crowdfunding</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Social Impact</span></div><a href="https://donatekart.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=StarKitchenEquipment.com" alt="Screenshot of Starkitchenequipment.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Star Kitchen Equipment</h3><p class="text-gray-400 mb-4 text-sm">A B2B website for a manufacturer of commercial kitchen and refrigeration equipment.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">B2B</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Manufacturing</span></div><a href="https://starkitchenequipment.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=UdaipurFourWheelTours.com" alt="Screenshot of Udaipurfourwheeltours.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Udaipur Four Wheel Tours</h3><p class="text-gray-400 mb-4 text-sm">A local tour operator website specializing in four-wheel vehicle tours around Udaipur.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Local Business</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Tourism</span></div><a href="https://udaipurfourwheeltours.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=AanviiHearing.com" alt="Screenshot of Aanviihearing.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Aanvii Hearing</h3><p class="text-gray-400 mb-4 text-sm">Professional website for a chain of hearing aid clinics, providing information and booking services.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Healthcare</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Corporate</span></div><a href="https://aanviihearing.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
-                <div class="glass-card overflow-hidden group"><img src="https://placehold.co/600x400/1f2937/d1d5db?text=OceanTattoos.com" alt="Screenshot of Oceantattoos.com project" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-6"><h3 class="text-xl font-bold text-white mb-2">Ocean Tattoos</h3><p class="text-gray-400 mb-4 text-sm">A portfolio website for a tattoo artist and studio, showcasing their artwork and services.</p><div class="flex flex-wrap gap-2 mb-4"><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Portfolio</span><span class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Local Business</span></div><a href="https://www.oceantattoos.com/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i class="fas fa-external-link-alt ml-1"></i></a></div></div>
+                <h3 class="text-xl font-bold text-white mb-2">Personal Portfolio</h3>
+                <p class="text-gray-400 mb-4 text-sm">My personal portfolio website built to showcase my skills,
+                    projects, and professional timeline.</p>
+                <div class="flex flex-wrap gap-2 mb-4"><span
+                        class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Portfolio</span><span
+                        class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Web
+                        Dev</span></div><a href="https://harshul.site" target="_blank" rel="noopener noreferrer"
+                    class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                        class="fas fa-external-link-alt ml-1"></i></a>
+            </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=Street9.com"
+                    alt="Screenshot of Street9.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Street9</h3>
+                    <p class="text-gray-400 mb-4 text-sm">An online fashion brand offering trendy and contemporary
+                        apparel for the modern woman.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Fashion</span>
+                    </div><a href="https://street9.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                            class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=SareeSelections.com"
+                    alt="Screenshot of Sareeselections.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Saree Selections</h3>
+                    <p class="text-gray-400 mb-4 text-sm">A specialized e-commerce store offering a wide variety of
+                        traditional Indian sarees and ethnic wear.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Ethnic
+                            Wear</span></div><a href="https://www.sareeselections.com/" target="_blank"
+                        rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit
+                        Site <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=YovanAttire.in"
+                    alt="Screenshot of Yovanattire.in project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Yovan Attire</h3>
+                    <p class="text-gray-400 mb-4 text-sm">An online destination for curated men's fashion, focusing
+                        on quality and modern style.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Men's
+                            Fashion</span></div><a href="https://yovanattire.in/" target="_blank"
+                        rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit
+                        Site <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=VgoCart.com"
+                    alt="Screenshot of Vgocart.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">VGOCart</h3>
+                    <p class="text-gray-400 mb-4 text-sm">A multi-vendor e-commerce marketplace offering a wide
+                        range of products across various categories.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Marketplace</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span>
+                    </div><a href="https://www.vgocart.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                            class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=OkkaBeauty.com"
+                    alt="Screenshot of Okkabeauty.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Okka Beauty</h3>
+                    <p class="text-gray-400 mb-4 text-sm">A premier e-commerce destination for authentic beauty and
+                        cosmetic products in the Middle East.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">E-commerce</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Beauty</span>
+                    </div><a href="https://www.okkabeauty.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                            class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=AhluwaliaLogistics.com"
+                    alt="Screenshot of Ahluwalialogistics.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Ahluwalia Logistics</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Corporate site for a leading integrated logistics and
+                        supply chain solutions provider in India.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Corporate</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Logistics</span>
+                    </div><a href="https://ahluwalialogistics.com" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                            class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=K2KVacations.in"
+                    alt="Screenshot of K2kvacations.in project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">K2K Vacations</h3>
+                    <p class="text-gray-400 mb-4 text-sm">A travel and tourism website offering curated vacation
+                        packages and tour services.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Travel</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Tourism</span>
+                    </div><a href="https://k2kvacations.in" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                            class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=DonateKart.com"
+                    alt="Screenshot of Donatekart.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">DonateKart</h3>
+                    <p class="text-gray-400 mb-4 text-sm">India's most trusted and transparent crowdfunding platform
+                        for non-profits and charities.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Crowdfunding</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Social
+                            Impact</span></div><a href="https://donatekart.com/" target="_blank"
+                        rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit
+                        Site <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=StarKitchenEquipment.com"
+                    alt="Screenshot of Starkitchenequipment.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Star Kitchen Equipment</h3>
+                    <p class="text-gray-400 mb-4 text-sm">A B2B website for a manufacturer of commercial kitchen and
+                        refrigeration equipment.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">B2B</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Manufacturing</span>
+                    </div><a href="https://starkitchenequipment.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                            class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=UdaipurFourWheelTours.com"
+                    alt="Screenshot of Udaipurfourwheeltours.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Udaipur Four Wheel Tours</h3>
+                    <p class="text-gray-400 mb-4 text-sm">A local tour operator website specializing in four-wheel
+                        vehicle tours around Udaipur.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Local
+                            Business</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Tourism</span>
+                    </div><a href="https://udaipurfourwheeltours.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                            class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=AanviiHearing.com"
+                    alt="Screenshot of Aanviihearing.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Aanvii Hearing</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Professional website for a chain of hearing aid clinics,
+                        providing information and booking services.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Healthcare</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Corporate</span>
+                    </div><a href="https://aanviihearing.com/" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit Site <i
+                            class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+            <div class="glass-card overflow-hidden group"><img
+                    src="https://placehold.co/600x400/1f2937/d1d5db?text=OceanTattoos.com"
+                    alt="Screenshot of Oceantattoos.com project"
+                    class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Ocean Tattoos</h3>
+                    <p class="text-gray-400 mb-4 text-sm">A portfolio website for a tattoo artist and studio,
+                        showcasing their artwork and services.</p>
+                    <div class="flex flex-wrap gap-2 mb-4"><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Portfolio</span><span
+                            class="bg-indigo-500/20 text-indigo-300 text-xs font-medium px-2 py-1 rounded-full">Local
+                            Business</span></div><a href="https://www.oceantattoos.com/" target="_blank"
+                        rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-semibold">Visit
+                        Site <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
             </div>
         </section>
 
         <!-- Testimonials Section -->
         <section id="testimonials" class="mb-24 fade-in-section">
-            <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white mb-12">What My Clients Say</h2>
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white mb-12">What My Clients Say
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial Card 1 -->
                 <div class="glass-card p-8 flex flex-col">
                     <i class="fas fa-quote-left text-indigo-400 text-3xl mb-4"></i>
-                    <p class="text-gray-300 mb-6 flex-grow">"Harshul is an exceptional developer with a keen eye for detail. He delivered our project on time and exceeded our expectations with his creativity and technical skill."</p>
+                    <p class="text-gray-300 mb-6 flex-grow">"Harshul is an exceptional developer with a keen eye for
+                        detail. He delivered our project on time and exceeded our expectations with his creativity and
+                        technical skill."</p>
                     <div class="mt-auto">
                         <p class="font-bold text-white">Jane Doe</p>
                         <p class="text-sm text-gray-400">CEO, Tech Solutions Inc.</p>
                     </div>
                 </div>
                 <!-- Testimonial Card 2 -->
-                 <div class="glass-card p-8 flex flex-col">
+                <div class="glass-card p-8 flex flex-col">
                     <i class="fas fa-quote-left text-indigo-400 text-3xl mb-4"></i>
-                    <p class="text-gray-300 mb-6 flex-grow">"Working with Harshul was a fantastic experience. His communication was clear, and he was always ready to go the extra mile to ensure the final product was perfect."</p>
+                    <p class="text-gray-300 mb-6 flex-grow">"Working with Harshul was a fantastic experience. His
+                        communication was clear, and he was always ready to go the extra mile to ensure the final
+                        product was perfect."</p>
                     <div class="mt-auto">
                         <p class="font-bold text-white">John Smith</p>
                         <p class="text-sm text-gray-400">Marketing Head, Creative Co.</p>
                     </div>
                 </div>
                 <!-- Testimonial Card 3 -->
-                 <div class="glass-card p-8 flex flex-col">
+                <div class="glass-card p-8 flex flex-col">
                     <i class="fas fa-quote-left text-indigo-400 text-3xl mb-4"></i>
-                    <p class="text-gray-300 mb-6 flex-grow">"The e-commerce platform Harshul built for us is robust, fast, and easy to manage. His expertise was invaluable throughout the entire process."</p>
+                    <p class="text-gray-300 mb-6 flex-grow">"The e-commerce platform Harshul built for us is robust,
+                        fast, and easy to manage. His expertise was invaluable throughout the entire process."</p>
                     <div class="mt-auto">
                         <p class="font-bold text-white">Emily White</p>
                         <p class="text-sm text-gray-400">Founder, Fashion Forward</p>
@@ -232,45 +609,56 @@
 
         <!-- Contact Section -->
         <section id="contact" class="fade-in-section">
-             <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white mb-12">Let's Connect</h2>
-             <div class="glass-card max-w-2xl mx-auto p-8">
+            <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white mb-12">Let's Connect</h2>
+            <div class="glass-card max-w-2xl mx-auto p-8">
                 <p class="text-center text-gray-300 mb-8">
-                    I'm currently available for freelance work and open to new opportunities. Whether you have a question or just want to say hi, my inbox is always open.
+                    I'm currently available for freelance work and open to new opportunities. Whether you have a
+                    question or just want to say hi, my inbox is always open.
                 </p>
                 <!-- Contact Info -->
-                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8 text-center">
+                <div
+                    class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8 text-center">
                     <div class="flex items-center space-x-3">
                         <i class="fas fa-envelope text-indigo-400 fa-lg"></i>
-                        <a href="mailto:your-email@example.com" class="text-white hover:text-indigo-300">your-email@example.com</a>
+                        <a href="mailto:your-email@example.com"
+                            class="text-white hover:text-indigo-300">your-email@example.com</a>
                     </div>
-                     <div class="flex items-center space-x-3">
+                    <div class="flex items-center space-x-3">
                         <i class="fas fa-map-marker-alt text-indigo-400 fa-lg"></i>
-                        <span>Bangalore, India</span>
+                        <span>India</span>
                     </div>
                 </div>
                 <form action="#">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <input type="text" placeholder="Your Name" required class="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <input type="email" placeholder="Your Email" required class="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <input type="text" placeholder="Your Name" required
+                            class="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <input type="email" placeholder="Your Email" required
+                            class="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
-                    <textarea placeholder="Your Message" rows="5" required class="w-full bg-gray-700 text-white rounded-lg p-3 mb-6 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    <textarea placeholder="Your Message" rows="5" required
+                        class="w-full bg-gray-700 text-white rounded-lg p-3 mb-6 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
                     <div class="text-center">
-                        <button type="submit" class="btn-primary text-white font-bold py-3 px-10 rounded-full text-lg">Send Message</button>
+                        <button type="submit"
+                            class="btn-primary text-white font-bold py-3 px-10 rounded-full text-lg">Send
+                            Message</button>
                     </div>
                 </form>
-             </div>
+            </div>
         </section>
     </main>
-    
+
     <!-- Footer -->
     <footer class="bg-gray-900 mt-20">
         <div class="container mx-auto px-6 py-8">
             <div class="flex flex-col items-center sm:flex-row sm:justify-between">
                 <p class="text-sm text-gray-400">&copy; 2025 Harshul Nihalani. All Rights Reserved.</p>
                 <div class="flex mt-4 sm:mt-0 space-x-6">
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="GitHub Profile"><i class="fab fa-github fa-lg"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="LinkedIn Profile"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="Twitter Profile"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"
+                        aria-label="GitHub Profile"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"
+                        aria-label="LinkedIn Profile"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"
+                        aria-label="Twitter Profile"><i class="fab fa-twitter fa-lg"></i></a>
                 </div>
             </div>
         </div>
@@ -278,7 +666,8 @@
 
     <!-- AI Chat Widget -->
     <div id="chat-widget" class="fixed bottom-5 right-5">
-        <div id="chat-circle" class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center cursor-pointer text-white text-3xl">
+        <div id="chat-circle"
+            class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center cursor-pointer text-white text-3xl">
             <i class="fas fa-comment-dots"></i>
         </div>
         <div id="chat-box" class="hidden absolute bottom-20 right-0 w-80 bg-gray-800 rounded-lg shadow-lg">
@@ -290,7 +679,8 @@
                 <!-- Chat messages will appear here -->
             </div>
             <div class="p-4 border-t border-gray-700">
-                <input type="text" id="chat-input" class="w-full bg-gray-700 text-white rounded-lg p-2" placeholder="Ask a question...">
+                <input type="text" id="chat-input" class="w-full bg-gray-700 text-white rounded-lg p-2"
+                    placeholder="Ask a question...">
             </div>
         </div>
     </div>
@@ -310,7 +700,7 @@
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetEl = document.querySelector(this.getAttribute('href'));
-                    if(targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
                     if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
                 });
             });
@@ -335,7 +725,7 @@
             const fadeSections = document.querySelectorAll('.fade-in-section');
             const fadeObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
-                    if(entry.isIntersecting) {
+                    if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                         observer.unobserve(entry.target);
                     }
@@ -345,6 +735,5 @@
         });
     </script>
 </body>
+
 </html>
-
-
