@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Harshul Nihalani | Data Engineer</title>
+    <meta name="description"
+        content="View and download the resume of Harshul Nihalani, a Data Engineer specializing in scalable data pipelines, AI automation, and cloud platforms.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #111827;
+            color: #d1d5db;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .toolbar {
+            background: #1f2937;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .toolbar-left a {
+            color: #818cf8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .toolbar-left a:hover {
+            color: #a5b4fc;
+        }
+
+        .toolbar-left span {
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .download-btn {
+            background: #4f46e5;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #6366f1;
+        }
+
+        .pdf-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            padding: 0;
+        }
+
+        .pdf-container iframe,
+        .pdf-container embed,
+        .pdf-container object {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .fallback p {
+            font-size: 16px;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <a href="index.html">&larr; Back to Portfolio</a>
+            <span>Harshul Nihalani — Resume</span>
+        </div>
+        <a href="resume.pdf" download="Harshul_Nihalani_Resume.pdf" class="download-btn">
+            ⬇ Download PDF
+        </a>
+    </div>
+    <div class="pdf-container">
+        <object data="resume.pdf" type="application/pdf" width="100%" height="100%">
+            <div class="fallback">
+                <p>Your browser doesn't support inline PDF viewing.</p>
+                <a href="resume.pdf" download="Harshul_Nihalani_Resume.pdf" class="download-btn">
+                    Download Resume PDF
+                </a>
+            </div>
+        </object>
+    </div>
+</body>
+
+</html>
