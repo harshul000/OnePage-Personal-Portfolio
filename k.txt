@@ -1,0 +1,40 @@
+SELECT 
+    c.contest_id,
+    c.hacker_id,
+    c.name,
+    SUM(s.ts) AS total_submissions,
+    SUM(s.ta) AS total_accepted_submissions,
+    SUM(v.tv) AS total_views,
+    SUM(v.tu) AS total_unique_views
+
+FROM contests c
+JOIN colleges col ON c.contest_id = col.contest_id
+JOIN challenges ch ON col.college_id = ch.college_id
+
+LEFT JOIN (
+    SELECT 
+        challenge_id,
+        SUM(total_submissions) AS ts,
+        SUM(total_accepted_submissions) AS ta
+    FROM submission_stats
+    GROUP BY challenge_id
+) s ON ch.challenge_id = s.challenge_id
+
+LEFT JOIN (
+    SELECT 
+        challenge_id,
+        SUM(total_views) AS tv,
+        SUM(total_unique_views) AS tu
+    FROM view_stats
+    GROUP BY challenge_id
+)v ON ch.challenge_id = v.challenge_id
+
+GROUP BY c.contest_id, c.hacker_id, c.name
+
+HAVING 
+    ifnull(SUM(s.ts), 0) +
+    ifnull(SUM(s.ta), 0) +
+    ifnull(SUM(v.tv), 0) +
+    ifnull(SUM(v.tu), 0) > 0
+
+ORDER BY c.contest_id;
