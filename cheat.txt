@@ -1,0 +1,297 @@
+The Report
+
+WITH cte AS (
+   SELECT s.name, g.grade, s.marks
+   FROM students s
+   JOIN grades g
+     ON s.marks BETWEEN g.min_mark AND g.max_mark
+)
+SELECT
+   CASE WHEN grade >= 8 THEN name ELSE NULL END AS name,
+   grade,
+   marks
+FROM cte
+ORDER BY
+   grade DESC,
+   CASE WHEN grade >= 8 THEN name end ,
+   case when grade  < 8 then marks end
+
+Top Competitors
+
+with cte as (
+select hacker_id , count(*) as c from (
+select s.submission_id , s.hacker_id  , s.challenge_id , s.score as sscore ,
+c.difficulty_level , d.score as dscore
+from submissions s join challenges c ON c.challenge_id = s.challenge_id
+join difficulty d ON d.difficulty_level = c.difficulty_level
+where s.score = d.score )k
+group by hacker_id
+having count(*) > 1
+)select cte.hacker_id ,name from cte join hackers ON cte.hacker_id = hackers.hacker_id
+order by c desc , hacker_id;
+Ollivander's Inventory
+select id , age , cte.coins_needed ,cte.power
+from (
+    select code , power, min(coins_needed) as coins_needed
+   from wands
+   group by code , power 
+)cte join (
+   select id , wands.code , power , coins_needed , age , is_evil
+   from wands join wands_property on wands.code = wands_property.code
+   where is_evil = 0  
+)cte1
+on cte.code = cte1.code AND
+cte.power = cte1.power and cte.coins_needed = cte1.coins_needed
+order by power desc ,age desc ;
+Approach 2 
+
+SELECT id, age, coins_needed, power
+FROM (
+   SELECT
+       w.id,
+       wp.age,
+       w.coins_needed,
+       w.power,
+       ROW_NUMBER() OVER (
+           PARTITION BY w.power, wp.age
+           ORDER BY w.coins_needed
+       ) AS rn
+   FROM Wands w
+   JOIN Wands_Property wp
+       ON w.code = wp.code
+   WHERE wp.is_evil = 0
+) t
+WHERE rn = 1
+ORDER BY power DESC, age DESC;
+
+
+Challenges
+SET NOCOUNT ON;
+WITH CTE AS (
+   select name ,challenges.hacker_id , count(*) as cnt
+   from challenges join hackers on hackers.hacker_id = challenges.hacker_id
+   group by challenges.hacker_id ,name
+),
+cte1 as (
+   select cnt
+   from cte
+   group by cnt
+   having count(*) = 1 or cnt = (select max(cnt) from cte)
+)select cte.hacker_id , cte.name ,cte.cnt
+from cte join cte1 on cte.cnt = cte1.cnt
+order by cte.cnt desc , cte.hacker_id  ;
+go
+Contest Leaderboard
+SELECT id, age, coins_needed, power
+FROM (
+   SELECT
+       w.id,
+       wp.age,
+       w.coins_needed,
+       w.power,
+       ROW_NUMBER() OVER (
+           PARTITION BY w.power, wp.age
+           ORDER BY w.coins_needed
+       ) AS rn
+   FROM Wands w
+   JOIN Wands_Property wp
+       ON w.code = wp.code
+   WHERE wp.is_evil = 0
+) t
+WHERE rn = 1
+ORDER BY power DESC, age DESC;
+
+
+ADVANCE JOINS 
+
+SQL Project Planning
+
+
+with cte as (
+select start_date , end_date ,
+end_date - interval row_number() over(order by end_date) day as g
+from projects
+)select min(start_date), max(end_date) from cte group by g
+order by datediff(max(end_date) , min(end_date) ) ,  min(end_date);
+
+
+
+Placements
+
+select s.name from
+students s join  packages p
+ON p.id = s.id
+JOIN friends f ON  f.id = s.id
+JOIN packages p1
+ON p1.id = f.friend_id
+where p1.salary > p.salary
+order by p1.salary
+
+Symmetric Pairs
+
+select f1.x , f1.y 
+from Functions f1 join Functions f2
+ON f1.x = f2.y and
+f2.x = f1.y
+group by  f1.x , f1.y 
+having f1.x < f1.y or count(*) > 1
+order by f1.x
+Interviews
+SET NOCOUNT ON;
+with cte as (
+   select challenge_id ,
+   sum(total_submissions) as ts,
+   sum(total_accepted_submissions) as tas
+   from submission_stats
+   group by challenge_id
+),
+cte1 as (
+   select challenge_id ,
+   sum(total_views) as tv,
+   sum(total_unique_views) as tav
+   from view_stats
+   group by challenge_id
+)
+select
+cl.contest_id ,
+co.hacker_id ,
+co.name,
+coalesce(sum(ts),0) as ts,
+coalesce(sum(tas),0) as tas,
+coalesce(sum(tv),0) as tv,
+coalesce(sum(tav),0) as tav
+from challenges ch join colleges cl ON cl.college_id  = ch.college_id
+join contests co on co.contest_id = cl.contest_id
+left join cte on cte.challenge_id = ch.challenge_id
+left join cte1 on cte1.challenge_id = ch.challenge_id
+GROUP by cl.contest_id ,co.hacker_id ,co.name
+having coalesce(sum(ts),0) +
+coalesce(sum(tas),0) +
+coalesce(sum(tv),0) +
+coalesce(sum(tav),0) != 0
+order by cl.contest_id ;
+go
+
+
+15 Days of Learning SQL
+
+with cte as (
+   select distinct submission_date , hacker_id
+   from submissions
+),
+cte1 as (
+   select submission_date , hacker_id ,
+   count(*)over(partition by hacker_id  order by submission_date) as a
+   from cte
+),
+cte2 as(
+   select *,dense_rank() over(order by submission_date) as b
+   from cte1
+),
+cte3 as (
+   select submission_date , count(*) as t
+   from cte2
+   where a = b
+   group by submission_date
+),
+cte4 as (
+   select submission_date , submissions.hacker_id ,name ,
+   row_number()over(partition by submission_date order by count(*) desc,submissions.hacker_id) as rn
+   from submissions join hackers on hackers.hacker_id = submissions.hacker_id
+   group by submission_date , submissions.hacker_id ,name
+)
+select cte4.submission_date ,cte3.t ,cte4.hacker_id , cte4.name
+from cte3 join cte4 on cte3.submission_date = cte4.submission_date
+where rn=1
+order by cte4.submission_date
+
+
+
+The PADS
+SET NOCOUNT ON;
+select
+concat(name,'(',substring(occupation,1,1),')')
+from OCCUPATIONS order by name ;
+select
+concat("There are a total of"," ",count(*)," ",lower(left(occupation,1)),substr(occupation,2),"s.")
+from OCCUPATIONS group by occupation order by count(*) ;
+
+Occupations
+
+with cte as (
+   select name , occupation ,
+   row_number() over(partition by occupation order by name) as rn
+   from OCCUPATIONS
+)SELECT
+max(case when occupation = 'Doctor' then name else null end) as Doctor ,
+max(case when occupation = 'Professor' then name else null end) as Professor,
+max(case when occupation = 'Singer' then name else null end) as Singer,
+max(case when occupation = 'Actor' then name else null end) as Actor
+from cte
+group by rn ;
+
+
+Binary Tree Nodes
+select n,
+case when p is null then 'Root'
+when n in (select p from bst) then 'Inner' else 'Leaf' end as node
+from bst
+order by n;
+
+
+New Companies
+
+
+
+
+
+
+with cte as (
+   select
+   company_code ,
+   count(distinct(lead_manager_code)) as lmcount
+   from Lead_Manager
+),
+cte1 as (
+   select
+   company_code ,
+   count(distinct(senior_manager_code)) as smcount
+   from Senior_Manager
+),
+cte2 as (
+   select
+   company_code ,
+   count(distinct(manager_manager_code)) as mmcount
+   from managers
+),
+cte3 as (
+   select
+   company_code ,
+   count(distinct(employee_code)) as eccount
+   from employees
+)select company_code , founder ,lmcount,smcount,mmcount,eccount
+from Company c join cte ON cte.company_code = c.company_code
+join cte1 ON cte1.company_code = c.company_code
+join cte2 ON cte2.company_code = c.company_code
+join cte3 ON cte3.company_code = c.company_code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
